@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MVCeTicaret.Models.OrderDetail>
+    @{
+        ViewBag.Title = "AddToCart";
+}
+
+<h2>Sepetiniz</h2>
+
+<div class="container">
+    <div class="row" style="margin-top:50px">
+        <ul>
+            @{ 
+                foreach (var item in Model)
+                {
+                    <li>
+                        <p><strong>Ürün Adı :</strong>@item.Product.Name</p>
+                        <p><strong>Ürün Fiyatı :</strong>@string.Format("{0:C2}",item.UnitPrice)</p>
+                        <p><strong>Ürün Miktarı :</strong>@item.Quantity @item.Product.QuantityPerUnit</p>
+
+                        <p><strong>Toplam Tutar :</strong>@string.Format("{0:C2}",item.TotalAmount)</p>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>

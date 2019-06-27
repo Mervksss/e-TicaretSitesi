@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MVCeTicaret.Models.WishList>
+@{
+    ViewBag.Title = "AddToWishList";
+}
+
+<h2>İstek Listesi </h2>
+
+<ul>
+    @{ 
+        foreach (var item in Model)
+        {
+            <li>
+                <p>
+                    <strong>Ürün Adı :</strong>@item.Product.Name
+                </p>
+            </li>
+        }
+    }
+</ul>
